@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lxy</title>
+    <link rel="stylesheet" href="../CSSFile/HeadAndFootStyle.css">
+    <link rel="stylesheet" href="../CSSFile/RowColStyle.css">
+    <style> 
+        .L_external_div{
+            border: 3px solid blue;
+            height: 100px;
+            /* 圆角效果 */
+            border-radius: 5px;
+            width: 90%;
+            margin: 50px auto;
+
+        }
+        .L_external_div .name_div{
+            border-bottom: 3px solid blue;
+            height: 50px;
+            line-height: 50px;
+        }
+        input{
+            border: 0;
+            outline: 0;
+        }
+
+    </style>
+</head>
+<body>
+
+ 
+    <header>
+        <p>登录</p>
+    </header>
+
+    <div style="margin-top: 100px; text-align: center;">
+        <img src="../Resource/head.png" alt="">
+    </div>
+
+        <!-- form表单 -->
+    <div>
+        <form action="" method="">
+            <div class="L_external_div">
+                <div class="name_div">
+                    <span>账号名：</span>
+                    <input id="uname" type="text" name="username" placeholder="请输入用户名" value="test">
+                </div>
+                <div class="pwd_div">
+                    <span>密码：</span>
+                    <input id="upwd" type="password" name="password" placeholder="请输入密码" value="123456">
+                </div>
+               
+            </div>
+            <div class="btn_div">
+                <input onclick="login()" type="button" value="登录">
+            </div>
+        </form>
+        <script>
+            function login(){
+                var uname = document.getElementById("uname").value;
+                var upwd = document.getElementById("upwd").value;
+                var reqPar = "username=" + uname + "&pwd=" + upwd;
+                //创建ajax请求对象
+                var ajaxObj = new XMLHttpRequest();
+
+                //open方法相当于装备了接口文档中4部分其中三个
+                ajaxObj.open('post','http://43.143.190.87:8182/login');
+                //post请求把参数封装成form表单
+                ajaxObj.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+
+                //请求对象带着接口文档中的4块内容开始向后端出发
+                ajaxObj.send(reqPar);
+
+                ajaxObj.onreadystatechange = function(){
+                    if(ajaxObj.readyState == 4 && ajaxObj.status == 200){
+                        var res = ajaxObj.responseText;
+                        
+                        //
+                        var jsonObj = JSON.parse(res);
+                        if(jsonObj.code == 1){
+                            window.location.href = "DropletService.html";
+                        }else{
+                            alert("用户名或密码错误！");
+                        }
+                    }
+                }
+
+            }
+        </script>
+    </div>
+    <input type="button" value="注册">
+
+
+    
+</body>
+</html>

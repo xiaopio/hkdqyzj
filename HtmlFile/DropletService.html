@@ -1,0 +1,124 @@
+<!-- Ctrl+!+Tab -->
+<!DOCTYPE html>
+
+<!-- html包含3大部分 ：标签 属性 内容 -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>lxy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <!-- 用来链接外部资源 资源路径：相对路径 ../上一级目录 ./当前目录  /下一级目录，绝对路径 -->
+    <link rel="short icon" href="../Resource/icon.png">
+    <link rel="stylesheet" href="../CSSFile/HeadAndFootStyle.css">
+    <link rel="stylesheet" href="../CSSFile/RowColStyle.css">
+
+    <style>
+        ul {
+            height: 100px;
+            background-color: aliceblue;
+            margin-bottom: 10px;
+        }
+
+        ul li {           
+            width: 33.3%;       
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 语义化标签：header  section  articel  footer -->
+    <!-- 搬文字 -->
+    <header>
+        <p>小滴服务</p>
+    </header>
+
+    <section style="margin-top: 44px;">
+        <img id="imgTag" src="../Resource/banner1.png" alt="" style="width:100%;">
+    </section>
+
+    <script>
+        var imgTag = document.getElementById("imgTag");
+
+        var imgNum = 1;
+        function changeImg() {
+            imgNum++;
+            if (imgNum == 5) {
+                imgNum = 1;
+            }
+            imgTag.src = "../Resource/banner" + imgNum + ".png";
+        }
+
+        setInterval(changeImg, 5000);
+    </script>
+
+    <!-- style="margin-bottom: 49px; -->
+    <section >
+        <ul>
+            <li>
+                <img src="../Resource/index1.png" alt="企业项目">
+                <p>企业项目</p>
+            </li>
+            <li>
+                <img src="../Resource/index2.png" alt="平台风采">
+                <p>平台风采</p>
+            </li>
+            <li>
+                <img src="../Resource/index3.png" alt="报名流程">
+                <p>报名流程</p>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <img src="../Resource/index4.png" alt="服务流程">
+                <p>客户管理</p>
+            </li>
+            <li>
+                <img src="../Resource/index5.png" alt="平台风采">
+                <p>账务管理</p>
+            </li>
+            <li>
+                <img src="../Resource/index6.png" alt="服务流程">
+                <p>新闻公告</p>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <img src="../Resource/index7.png" alt="工程案例">
+                <p>工程案例</p>
+            </li>
+            <li>
+                <img src="../Resource/index8.png" alt="修改密码">
+                <p>修改密码</p>
+            </li>
+            <li>
+                <img src="../Resource/index9.png" alt="会员注册">
+                <p>会员注册</p>
+            </li>
+        </ul> 
+    <footer>
+        <a href="DropletService.html">
+            <img src="../Resource/nav11.png" alt="小滴服务">
+            <p style="color: red;">小滴服务</p>
+        </a>
+        <a href="BusinessProject.html">
+            <img src="../Resource/nav21.png" alt="企业项目">
+            <p>企业项目</p>
+        </a>
+        <a href="ServiceProcess.html">
+            <img src="../Resource/nav31.png" alt="服务流程">
+            <p>服务流程</p>
+        </a>
+        <a href="PlatformStyle.html">
+            <img src="../Resource/nav41.png" alt="平台风采">
+            <p>平台风采</p>
+        </a>
+        <a href="MyDroplet.html">
+            <img src="../Resource/nav51.png" alt="我的小滴">
+            <p>我的小滴</p>
+        </a>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+ul,footer,.BP_section{
+    display: table;
+    width: 100%;
+}
+
+ul li,footer a,.BP_section a{
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+/* 鼠标悬停链接 */
+section a:hover {
+    color: #089dfa;
+}
+
+/* 已选择的链接 */
+section a:active {
+    color: #1b57f0;
+}
+section {
+    margin-bottom: 49px;
+}
+.BP_section{
+    margin-top: 44px;
+}
